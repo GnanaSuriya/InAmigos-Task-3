@@ -3,9 +3,37 @@ import type { Internship } from '../types/internship';
 /**
  * Verified listings for InAmigos Foundation.
  * All listings represent real opportunities offered by InAmigos Foundation on Internshala.
- * Specific dates and URLs are verified against Internshala records.
+ * Specific URLs must point to individual listing detail pages on Internshala.
+ * If an individual listing URL is unavailable, applicationUrl is set to null to prevent
+ * falling back to generic search pages and to show "Application link unavailable".
  */
 export const INAMIGOS_INTERNSHIPS: Internship[] = [
+  {
+    id: 'inamigos-ai-data-analytics',
+    title: 'AI Data Analytics Intern',
+    organization: 'InAmigos Foundation',
+    category: 'Data & Analytics',
+    shortDescription: 'Clean, interpret, and visualize program data while leveraging AI analysis tools to extract actionable community insights.',
+    overview: 'Support data-driven decision making at InAmigos Foundation. In this 2-week remote role, you will analyze survey data, generate intuitive dashboards, and explore generative AI tools for data synthesis.',
+    responsibilities: [
+      'Extract, sanitize, and structure field data collected across social welfare drives.',
+      'Generate clear data visualizations using Python (Pandas/Matplotlib) or Excel/Tableau.',
+      'Experiment with AI-powered data summarization to produce executive reports.',
+      'Prepare summary presentations detailing findings and recommendations.'
+    ],
+    skills: ['Data Analysis', 'Python / Excel', 'Data Visualization', 'SQL Basics', 'Analytical Thinking'],
+    eligibility: 'Undergraduate or postgraduate students interested in data science, analytics, or statistics.',
+    duration: '2 Weeks',
+    workMode: 'Work From Home',
+    stipend: 'Unpaid (Certificate & LOR provided)',
+    deadline: 'Rolling Applications',
+    status: 'Applications Open',
+    sourcePlatform: 'Internshala',
+    sourceUrl: 'https://internshala.com/internship/detail/work-from-home-ai-data-analytics-internship-at-inamigos-foundation1791454284',
+    applicationUrl: 'https://internshala.com/internship/detail/work-from-home-ai-data-analytics-internship-at-inamigos-foundation1791454284',
+    lastVerifiedAt: '2026-10-11',
+    isFeatured: true
+  },
   {
     id: 'inamigos-ai-ml',
     title: 'Artificial Intelligence & Machine Learning Intern',
@@ -28,33 +56,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Applications Open',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    lastVerifiedAt: '2026-10-10',
-    isFeatured: true
-  },
-  {
-    id: 'inamigos-ai-data-analytics',
-    title: 'AI Data Analytics Intern',
-    organization: 'InAmigos Foundation',
-    category: 'Data & Analytics',
-    shortDescription: 'Clean, interpret, and visualize program data while leveraging AI analysis tools to extract actionable community insights.',
-    overview: 'Support data-driven decision making at InAmigos Foundation. In this 2-week remote role, you will analyze survey data, generate intuitive dashboards, and explore generative AI tools for data synthesis.',
-    responsibilities: [
-      'Extract, sanitize, and structure field data collected across social welfare drives.',
-      'Generate clear data visualizations using Python (Pandas/Matplotlib) or Excel/Tableau.',
-      'Experiment with AI-powered data summarization to produce executive reports.',
-      'Prepare summary presentations detailing findings and recommendations.'
-    ],
-    skills: ['Data Analysis', 'Python / Excel', 'Data Visualization', 'SQL Basics', 'Analytical Thinking'],
-    eligibility: 'Undergraduate or postgraduate students interested in data science, analytics, or statistics.',
-    duration: '2 Weeks',
-    workMode: 'Work From Home',
-    stipend: 'Unpaid (Certificate & LOR provided)',
-    deadline: 'Rolling Applications',
-    status: 'Applications Open',
-    sourcePlatform: 'Internshala',
-    sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-10',
     isFeatured: true
   },
@@ -80,7 +82,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Applications Open',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-10',
     isFeatured: true
   },
@@ -106,7 +108,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Applications Open',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-09',
     isFeatured: false
   },
@@ -132,7 +134,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Applications Open',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-08',
     isFeatured: false
   },
@@ -158,7 +160,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Applications Open',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-08',
     isFeatured: true
   },
@@ -184,7 +186,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Applications Open',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-07',
     isFeatured: false
   },
@@ -210,7 +212,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Applications Open',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    applicationUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-07',
     isFeatured: false
   },
@@ -235,8 +237,7 @@ export const INAMIGOS_INTERNSHIPS: Internship[] = [
     status: 'Upcoming',
     sourcePlatform: 'Internshala',
     sourceUrl: 'https://internshala.com/internships/inamigos-foundation-internships/',
-    // Note: Application URL intentionally null for this record to test "Application link unavailable" handling
-    applicationUrl: null,
+    applicationUrl: null, // Individual listing URL unavailable; disabled to prevent generic fallback
     lastVerifiedAt: '2026-10-06',
     isFeatured: false
   }

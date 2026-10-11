@@ -147,7 +147,7 @@ export const InternshipCard = ({
               className="w-full py-2.5 px-3 rounded-xl bg-slate-100 text-slate-400 text-[11px] font-medium text-center cursor-not-allowed border border-slate-200/60"
               title="Application link is currently unavailable for this cohort"
             >
-              Link unavailable
+              Application link unavailable
             </button>
           )}
         </div>
