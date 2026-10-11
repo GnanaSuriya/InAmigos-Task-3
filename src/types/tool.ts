@@ -33,6 +33,10 @@ export interface AITool {
   isFeatured: boolean;
   collections: string[]; // e.g. ['students', 'developers', 'free-freemium']
   lastVerifiedAt: string; // ISO date format YYYY-MM-DD
+  capabilities?: string[];
+  searchKeywords?: string[];
+  matchReason?: string;
+  matchScore?: number;
 }
 
 export type SortOption = 'featured' | 'name-asc' | 'recently-verified';

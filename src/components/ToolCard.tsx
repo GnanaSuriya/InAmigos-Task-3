@@ -97,9 +97,17 @@ export const ToolCard = ({
         </h3>
 
         {/* Short Description */}
-        <p className="text-xs text-[#A7B4C8] line-clamp-2 leading-relaxed mb-4">
+        <p className="text-xs text-[#A7B4C8] line-clamp-2 leading-relaxed mb-3">
           {tool.description}
         </p>
+
+        {/* Match Explanation Badge (when matching search query) */}
+        {tool.matchReason && (
+          <div className="mb-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-blue-950/70 border border-blue-500/30 text-[10.5px] font-medium text-[#60A5FA] max-w-full">
+            <Sparkles className="w-2.5 h-2.5 text-[#22D3EE] shrink-0" />
+            <span className="truncate">{tool.matchReason}</span>
+          </div>
+        )}
 
         {/* Tags / Use cases */}
         <div className="flex flex-wrap gap-1.5 mb-5">

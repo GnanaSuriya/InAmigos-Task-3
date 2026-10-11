@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "validate:tools": "node scripts/validate-tools.mjs"
+    "validate:tools": "node scripts/validate-tools.mjs",
+    "test:search": "npx -y tsx scripts/test-search.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

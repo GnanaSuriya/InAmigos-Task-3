@@ -49,3 +49,11 @@
 - Create `vercel.json` for client-side single page app routing rewrites.
 - Ensure zero hardcoded server dependencies or secrets.
 - Write comprehensive deployment instructions in `README.md`.
+
+### Phase 11: Intent-Aware Smart Search & Natural Query Engine
+- Define query preprocessing: lowercase normalization, punctuation handling, tokenization, and stop-word/filler filtering while preserving intent terms.
+- Enrich data model (`src/types/tool.ts` & `src/data/tools.ts`) with verified capabilities, searchKeywords, and synonyms.
+- Implement client-side relevance scoring engine combining exact name, categories, capabilities, use cases, tags, and intent boosts.
+- Add match explanation badges on tool cards when matching search queries.
+- Upgrade `EmptyState.tsx` with helpful query suggestions and clickable chips.
+- Verify benchmark queries including "best AI for research", "help me study", "best AI for coding", "make a presentation", "generate images", "free AI tools for students", "summarize PDFs".

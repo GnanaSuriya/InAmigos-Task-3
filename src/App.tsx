@@ -286,7 +286,10 @@ export function App() {
             ) : (
               <EmptyState
                 isFavoritesMode={filters.onlyFavorites && favoritesCount === 0}
+                searchQuery={filters.searchQuery}
                 onResetFilters={handleResetFilters}
+                onSelectQuery={(q) => handleFilterChange({ searchQuery: q })}
+                onClearSearch={() => handleFilterChange({ searchQuery: '' })}
               />
             )}
           </div>

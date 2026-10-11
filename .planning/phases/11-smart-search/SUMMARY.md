@@ -1,0 +1,38 @@
+# Phase 11 Summary: Intent-Aware Smart Search & Natural Query Engine
+
+## Completed Deliverables
+- **Data Model Extended (`src/types/tool.ts`)**:
+  - Added `capabilities?: string[]` and `searchKeywords?: string[]` to `AITool`.
+  - Added dynamic `matchReason?: string` and `matchScore?: number` to `AITool` in search results.
+- **Dataset Enriched (`src/data/tools.ts`)**:
+  - Enriched all 33 tools with verified factual capabilities and search intent keywords.
+  - Validated with `npm run validate:tools` (100% canonical HTTPS vendor URLs preserved).
+- **Client-Side Intent Search Engine (`src/utils/searchEngine.ts`)**:
+  - Query preprocessing: lowercase normalization, punctuation stripping, tokenization.
+  - Filler and stop-word filtering (removing noise like "best", "the", "for", "me", "using", "to", "ai", "tools" while preserving intent terms like "free", "coding", "research", "pdf", "students", "images", "websites").
+  - 11 Domain Task Intents: Academic Research, Student Study, Coding, Web App Builders, Presentations & Slides, PDF Summarization, Image Generation, Video Generation, Audio/Music, Writing Polish, Free for Students.
+  - Weighted multi-signal relevance scoring algorithm: exact name/slug (+150), name tokens (+35), category (+25), capabilities (+30), use cases (+24), keywords (+28), tags (+18), intent boost (+50 to +85), pricing alignment (+50 Free, -60 Paid when user specifies "free").
+  - Precision word-boundary token matching preventing partial sub-word false positives.
+  - Dynamic `matchReason` generator for transparent explainability (e.g., *"Matched intent: Academic Research & Citations"*).
+- **Directory Search Integration (`src/utils/filterTools.ts`)**:
+  - Seamlessly piped `scoreAndRankTools` with category pills, pricing tiers, collections, and favorites.
+- **UI Enhancements (`src/components/ToolCard.tsx` & `src/components/EmptyState.tsx`)**:
+  - Tool cards now display match reason badges (`Matched intent: ...`).
+  - Empty state displays "No Exact Matches" with 6 clickable suggested workflow chips (`"best AI for research"`, `"best AI for coding"`, `"make a presentation"`, `"generate images"`, `"summarize PDFs"`, `"free AI tools for students"`) and a clear search button.
+- **Automated Benchmark Test Suite (`scripts/test-search.ts` & `npm run test:search`)**:
+  - 14/14 automated tests passed:
+    - `"best AI for research"` -> NotebookLM, Elicit, Perplexity top ranked.
+    - `"research"` -> Research tools surfaced.
+    - `"help me study"` -> Student study tools surfaced.
+    - `"best AI for coding"` -> Cursor, GitHub Copilot, Replit, Codeium top ranked.
+    - `"make a presentation"` -> Gamma, Canva Magic Studio top ranked.
+    - `"make presentations using AI"` -> Gamma, Canva Magic Studio top ranked.
+    - `"generate images"` -> Midjourney, Adobe Firefly, Canva, Ideogram top ranked.
+    - `"free AI tools for students"` -> NotebookLM, Hugging Face, Perplexity top ranked.
+    - `"summarize PDFs"` -> NotebookLM, Claude, Elicit, ChatGPT top ranked.
+    - `"buy cheap car insurance"` -> 0 results (empty state).
+    - `"AI to build websites"` -> v0, Lovable, Replit, Cursor top ranked.
+    - Search + Category filter compatibility verified.
+    - Match explanation badge generation verified.
+- **Browser Subagent E2E Verification**:
+  - Verified in browser with real typing, empty state suggestion chip clicking, and 0 console errors.

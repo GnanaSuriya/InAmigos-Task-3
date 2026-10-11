@@ -135,10 +135,12 @@ This verifies:
    - Dedicated showcase highlighting 6 flagship tools.
    - Starred cards with instant external link and bookmark actions.
 
-4. **Multi-Faceted Search, Filters & Sorting**:
-   - **Multi-Field Search**: Searches across tool name, description, category, tags, and use cases.
+4. **Intent-Aware Smart Search, Filters & Sorting**:
+   - **Semantic Task Understanding**: Normalizes natural-language queries (e.g., *"best AI for research"*, *"make a presentation"*, *"summarize PDFs"*, *"AI to build websites"*) and matches them against curated tool capabilities and search keywords.
+   - **Explainable Match Reasons**: Displays interactive match badges on cards explaining why a tool surfaced (e.g., `Matched intent: Academic Research & Citations`).
+   - **Interactive Empty-State Suggestions**: Recommends clickable workflow pills when queries produce 0 results, enabling 1-click recovery.
    - **10 Functional Categories**: AI Assistants, Coding & Development, Writing & Content, Image Generation & Design, Video & Animation, Audio & Music, Research & Education, Productivity & Automation, Business & Marketing, Data Analysis.
-   - **Pricing Filter**: Free, Freemium, Paid, Pricing varies.
+   - **Pricing Filter**: Free, Freemium, Paid, Pricing varies (with smart "free" query boosting).
    - **Collections Filter**: Filter by curated workflows.
    - **3 Sorting Modes**: Featured, Alphabetical (A-Z), and Recently Added.
    - **Active Counter & Reset**: "Showing X of Y tools" with one-click "Clear filters".
@@ -262,6 +264,12 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ```bash
 # Verify all tool links and schema compliance
 npm run validate:tools
+```
+
+### Intent-Aware Smart Search Test Suite
+```bash
+# Run automated benchmark test suite for 14 natural-language queries
+npm run test:search
 ```
 
 ### Building for Production
