@@ -1,114 +1,110 @@
-import { ExternalLink, ShieldAlert } from 'lucide-react';
+import { ShieldAlert } from 'lucide-react';
+import { Logo } from './Logo';
+import { CATEGORIES } from '../data/tools';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
+  onSelectCategory: (category: string) => void;
+  onOpenFavorites: () => void;
 }
 
-export const Footer = ({ onNavigate }: FooterProps) => {
+export const Footer = ({
+  onNavigate,
+  onSelectCategory,
+  onOpenFavorites,
+}: FooterProps) => {
   return (
-    <footer className="bg-white border-t border-slate-200 text-slate-600 text-xs">
+    <footer className="bg-[#0B1220] border-t border-[#253247] text-[#A7B4C8] text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           {/* Brand & Mission Statement */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-lg bg-purple-700 flex items-center justify-center text-white font-bold text-xs">
-                II
-              </div>
-              <span className="font-bold text-slate-900 tracking-tight text-base font-heading">
-                InAmigos<span className="text-purple-700 font-medium"> Internships</span>
-              </span>
-            </div>
-            <p className="text-slate-500 leading-relaxed max-w-sm">
-              An independent discovery and redirection index for internship opportunities offered by InAmigos Foundation and hosted on Internshala.
+            <Logo size="md" />
+            <p className="text-[#718096] leading-relaxed max-w-sm">
+              Discover the right AI for every task. A curated directory of software tools for coding, design, writing, research, and automation.
             </p>
-            <div className="text-[11px] text-slate-400">
-              © {new Date().getFullYear()} InAmigos Internships Discovery Portal.
+            <div className="text-[11px] text-[#718096]">
+              © {new Date().getFullYear()} AI Toolbox. All rights reserved.
             </div>
           </div>
 
           {/* Quick Navigation Links */}
           <div className="md:col-span-3 space-y-3">
-            <div className="font-bold text-slate-900 uppercase tracking-wider text-[11px]">
+            <div className="font-bold text-[#F8FAFC] uppercase tracking-wider text-[11px]">
               Navigation
             </div>
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => onNavigate('explore-section')}
-                  className="hover:text-purple-700 transition-colors cursor-pointer"
+                  onClick={() => onNavigate('discover-section')}
+                  className="hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  Explore Internships
+                  Discover Tools
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('how-it-works-section')}
-                  className="hover:text-purple-700 transition-colors cursor-pointer"
+                  onClick={() => onNavigate('categories-section')}
+                  className="hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  How It Works
+                  Browse Categories
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('collections-section')}
+                  className="hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  Curated Collections
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={onOpenFavorites}
+                  className="hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  Saved Favorites
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => onNavigate('about-section')}
-                  className="hover:text-purple-700 transition-colors cursor-pointer"
+                  className="hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  About InAmigos Foundation
+                  About AI Toolbox
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Verified External Sources */}
+          {/* Top Categories Links */}
           <div className="md:col-span-4 space-y-3">
-            <div className="font-bold text-slate-900 uppercase tracking-wider text-[11px]">
-              Verified Source Destinations
+            <div className="font-bold text-[#F8FAFC] uppercase tracking-wider text-[11px]">
+              Top Categories
             </div>
-            <ul className="space-y-2.5">
-              <li>
-                <a
-                  href="https://inamigosfoundation.org.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-purple-700 font-medium transition-colors"
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              {CATEGORIES.slice(0, 6).map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => {
+                    onSelectCategory(cat);
+                    onNavigate('discover-section');
+                  }}
+                  className="text-left text-[#718096] hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  <span>InAmigos Foundation Official Website</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://internshala.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-purple-700 font-medium transition-colors"
-                >
-                  <span>Internshala (Official Application Platform)</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://internshala.com/internships/inamigos-foundation-internships/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-purple-700 text-slate-500 transition-colors"
-                >
-                  <span>InAmigos Foundation Internshala Page</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </li>
-            </ul>
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Compulsory Legal & Transparency Disclaimer Banner */}
-        <div className="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between text-xs text-slate-500">
-          <div className="flex items-start gap-2.5 max-w-3xl">
-            <ShieldAlert className="w-4 h-4 text-purple-600 shrink-0 mt-0.5" />
+        {/* Legal & Outbound Disclaimer Banner */}
+        <div className="mt-12 pt-8 border-t border-[#1A2639] flex flex-col md:flex-row gap-4 items-start md:items-center justify-between text-xs text-[#718096]">
+          <div className="flex items-start gap-2.5 max-w-4xl">
+            <ShieldAlert className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
-              <strong>Disclaimer:</strong> This website helps users discover internship listings and redirects applicants to Internshala. Verify the current requirements and application status on the original listing. This website is independently maintained and does not represent official operation by InAmigos Foundation.
+              <strong>Disclaimer:</strong> AI Toolbox is an independent discovery directory that redirects users to official third-party software provider websites. AI Toolbox does not provide, host, or operate any listed AI models or services. Trademarks, brand names, and logos belong to their respective owners.
             </p>
           </div>
         </div>

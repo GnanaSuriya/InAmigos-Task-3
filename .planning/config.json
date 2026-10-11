@@ -1,14 +1,15 @@
 {
-  "project_name": "inamigos-internships",
+  "project_name": "ai-toolbox",
   "workflow": "gsd-core",
-  "version": "1.0.0",
-  "mode": "interactive",
-  "created_at": "2026-10-11T11:12:00+05:30",
+  "version": "2.0.0",
+  "mode": "production-directory",
+  "created_at": "2026-10-11T11:50:00+05:30",
   "stack": {
-    "framework": "React 19 + Vite",
+    "framework": "React 19 + Vite 8",
     "language": "TypeScript",
-    "styling": "Tailwind CSS",
+    "styling": "Tailwind CSS v4 (Custom Dark UI Tokens)",
     "icons": "Lucide React",
-    "state": "React hooks + LocalStorage"
+    "state": "React hooks + LocalStorage",
+    "deployment": "Vercel SPA Ready"
   }
 }

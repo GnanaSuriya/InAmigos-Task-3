@@ -1,47 +1,47 @@
 import { SearchX, BookmarkX, RotateCcw } from 'lucide-react';
 
 interface EmptyStateProps {
-  isBookmarkedMode: boolean;
+  isFavoritesMode: boolean;
   onResetFilters: () => void;
 }
 
 export const EmptyState = ({
-  isBookmarkedMode,
+  isFavoritesMode,
   onResetFilters,
 }: EmptyStateProps) => {
-  if (isBookmarkedMode) {
+  if (isFavoritesMode) {
     return (
-      <div className="bg-white rounded-2xl border border-slate-200/90 p-12 text-center max-w-lg mx-auto shadow-2xs">
-        <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mx-auto mb-4">
+      <div className="bg-[#101827] rounded-3xl border border-[#253247] p-12 text-center max-w-lg mx-auto shadow-xl shadow-black/20">
+        <div className="w-12 h-12 rounded-2xl bg-blue-950/60 text-[#60A5FA] border border-blue-500/30 flex items-center justify-center mx-auto mb-4">
           <BookmarkX className="w-6 h-6" />
         </div>
-        <h3 className="text-lg font-bold text-slate-900 mb-2">No Saved Internships Yet</h3>
-        <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-          You haven't bookmarked any opportunities. Browse the listings and click the bookmark icon on any card to save it for quick reference.
+        <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">No Favorite Tools Saved Yet</h3>
+        <p className="text-xs text-[#A7B4C8] mb-6 leading-relaxed">
+          You haven't bookmarked any AI tools yet. Click the bookmark icon on any tool card while browsing to save it to your local favorites.
         </p>
         <button
           onClick={onResetFilters}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-700 hover:bg-purple-800 text-white text-xs font-semibold shadow-xs cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-xs cursor-pointer"
         >
           <RotateCcw className="w-3.5 h-3.5" />
-          <span>Show All Opportunities</span>
+          <span>Browse All AI Tools</span>
         </button>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/90 p-12 text-center max-w-lg mx-auto shadow-2xs">
-      <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-500 flex items-center justify-center mx-auto mb-4">
+    <div className="bg-[#101827] rounded-3xl border border-[#253247] p-12 text-center max-w-lg mx-auto shadow-xl shadow-black/20">
+      <div className="w-12 h-12 rounded-2xl bg-[#151F30] text-[#718096] border border-[#253247] flex items-center justify-center mx-auto mb-4">
         <SearchX className="w-6 h-6" />
       </div>
-      <h3 className="text-lg font-bold text-slate-900 mb-2">No Matching Opportunities Found</h3>
-      <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-        We couldn't find any InAmigos Foundation internships matching your current search criteria or active filters. Try broadening your keywords or resetting filters.
+      <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">No Matching AI Tools Found</h3>
+      <p className="text-xs text-[#A7B4C8] mb-6 leading-relaxed">
+        We couldn't find any tools matching your active search keywords or category filters. Try broadening your search or resetting active filters.
       </p>
       <button
         onClick={onResetFilters}
-        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-700 hover:bg-purple-800 text-white text-xs font-semibold shadow-xs cursor-pointer"
+        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-xs cursor-pointer"
       >
         <RotateCcw className="w-3.5 h-3.5" />
         <span>Reset Filters & Search</span>

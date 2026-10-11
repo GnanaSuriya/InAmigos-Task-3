@@ -1,159 +1,130 @@
-import { ArrowDown, Compass, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
+import { Search, Sparkles, ArrowDown, Grid, X } from 'lucide-react';
+import { CURATED_COLLECTIONS } from '../data/tools';
 
 interface HeroProps {
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
   onExploreClick: () => void;
-  onHowItWorksClick: () => void;
-  totalRolesCount: number;
+  onCategoriesClick: () => void;
+  onSelectCollection: (collectionId: string) => void;
+  activeCollection: string;
+  totalToolsCount: number;
 }
 
 export const Hero = ({
+  searchQuery,
+  onSearchChange,
   onExploreClick,
-  onHowItWorksClick,
-  totalRolesCount,
+  onCategoriesClick,
+  onSelectCollection,
+  activeCollection,
+  totalToolsCount,
 }: HeroProps) => {
   return (
-    <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-slate-200/60 bg-gradient-to-b from-[#FAFAF9] via-white to-[#FAFAF9]">
-      {/* Decorative ambient background subtle lines */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.35]">
+    <section className="relative overflow-hidden pt-12 pb-14 md:pt-18 md:pb-20 border-b border-[#253247] bg-gradient-to-b from-[#0B1220] via-[#070B12] to-[#070B12]">
+      {/* Background ambient grid pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="grid-pattern" width="48" height="48" patternUnits="userSpaceOnUse">
-              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#E2E8F0" strokeWidth="0.8" />
+            <pattern id="dark-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#253247" strokeWidth="0.75" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+          <rect width="100%" height="100%" fill="url(#dark-grid)" />
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Editorial Headline & Copy */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
-            {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-200/80 text-purple-800 text-[11px] font-semibold tracking-wider uppercase mb-6 shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-              <span>YOUR NEXT OPPORTUNITY STARTS HERE</span>
+      {/* Subtle radial glow in the center */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Eyebrow badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101827] border border-blue-500/30 text-[#60A5FA] text-xs font-semibold tracking-wide uppercase mb-6 shadow-xs shadow-blue-500/10">
+          <Sparkles className="w-3.5 h-3.5 text-[#22D3EE]" />
+          <span>Curated AI Intelligence Directory • {totalToolsCount} Verified Tools</span>
+        </div>
+
+        {/* Main Headline */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#F8FAFC] tracking-tight leading-[1.15] mb-5">
+          Discover the right AI <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
+            for every task.
+          </span>
+        </h1>
+
+        {/* Supporting Copy */}
+        <p className="text-base sm:text-lg text-[#A7B4C8] max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+          Explore a curated collection of AI tools that help you build faster, create smarter, and get more done.
+        </p>
+
+        {/* Prominent Search Field */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="relative flex items-center">
+            <div className="absolute left-4 text-[#60A5FA] pointer-events-none">
+              <Search className="w-5 h-5" />
             </div>
-
-            {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
-              Find your place at <span className="text-purple-700">InAmigos.</span>
-            </h1>
-
-            {/* Supporting Text */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8 font-normal">
-              Explore internship opportunities at InAmigos Foundation, discover roles that match your interests, and apply through Internshala.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto mb-10">
+            <input
+              id="hero-search-input"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => onSearchChange(e.target.value)}
+              placeholder="Search AI tools, categories, or use cases..."
+              className="w-full pl-12 pr-12 py-3.5 rounded-2xl bg-[#101827] border border-[#253247] text-[#F8FAFC] placeholder:text-[#718096] text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all shadow-lg shadow-black/40"
+              aria-label="Search AI tools, categories, or use cases"
+            />
+            {searchQuery && (
               <button
-                onClick={onExploreClick}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-semibold text-sm shadow-sm hover:shadow transition-all cursor-pointer group"
+                onClick={() => onSearchChange('')}
+                className="absolute right-4 text-[#718096] hover:text-[#F8FAFC] transition-colors p-1"
+                aria-label="Clear search query"
               >
-                <span>Explore Internships</span>
-                <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                <X className="w-4 h-4" />
               </button>
-
-              <button
-                onClick={onHowItWorksClick}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-200 hover:border-slate-300 shadow-2xs transition-all cursor-pointer"
-              >
-                <Compass className="w-4 h-4 text-slate-500" />
-                <span>How It Works</span>
-              </button>
-            </div>
-
-            {/* Restrained Trust Statement */}
-            <div className="pt-6 border-t border-slate-200/80 w-full flex flex-col sm:flex-row sm:items-center gap-4 text-xs text-slate-500">
-              <div className="flex items-center gap-2 text-slate-700 font-medium">
-                <ShieldCheck className="w-4 h-4 text-purple-600 shrink-0" />
-                <span>One destination for InAmigos Foundation internship opportunities.</span>
-              </div>
-              <span className="hidden sm:inline text-slate-300">•</span>
-              <div className="flex items-center gap-1.5 text-slate-500">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>{totalRolesCount} verified active tracks</span>
-              </div>
-            </div>
+            )}
           </div>
+        </div>
 
-          {/* Right Column: Editorial Visual (Geometric Abstract Illustration of Growth & Learning) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8">
-              {/* Top Card Bar */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-purple-600"></div>
-                  <span className="text-xs font-semibold text-slate-900 tracking-wide uppercase">
-                    InAmigos Learning Pathways
-                  </span>
-                </div>
-                <span className="text-[11px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded font-medium border border-purple-100">
-                  Virtual 2-Week Cohorts
-                </span>
-              </div>
+        {/* Action Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+          <button
+            onClick={onExploreClick}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-md shadow-blue-600/25 transition-all cursor-pointer group"
+          >
+            <span>Explore Tools</span>
+            <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+          </button>
 
-              {/* Geometric Step Illustration */}
-              <div className="space-y-4">
-                {/* Step 1 Graphic Card */}
-                <div className="p-3.5 rounded-xl bg-[#FAFAF9] border border-slate-200/70 flex items-center justify-between hover:border-purple-200 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs">
-                      01
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-slate-900">AI & Engineering Tracks</div>
-                      <div className="text-[11px] text-slate-500">Machine Learning, Analytics & Prompting</div>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-medium bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-200">
-                    Active
-                  </span>
-                </div>
+          <button
+            onClick={onCategoriesClick}
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#101827] hover:bg-[#151F30] text-[#F8FAFC] font-semibold text-sm border border-[#253247] hover:border-[#3B82F6]/50 shadow-xs transition-all cursor-pointer"
+          >
+            <Grid className="w-4 h-4 text-[#60A5FA]" />
+            <span>Browse Categories</span>
+          </button>
+        </div>
 
-                {/* Step 2 Graphic Card */}
-                <div className="p-3.5 rounded-xl bg-[#FAFAF9] border border-slate-200/70 flex items-center justify-between hover:border-purple-200 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-xs">
-                      02
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-slate-900">Grassroots Social Impact</div>
-                      <div className="text-[11px] text-slate-500">Bachpanshala, Udaan & Seva Drives</div>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-medium bg-purple-50 text-purple-700 px-2 py-0.5 rounded border border-purple-200">
-                    Enrolling
-                  </span>
-                </div>
-
-                {/* Step 3 Graphic Card */}
-                <div className="p-3.5 rounded-xl bg-[#FAFAF9] border border-slate-200/70 flex items-center justify-between hover:border-purple-200 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-xs">
-                      03
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-slate-900">Creative & Communications</div>
-                      <div className="text-[11px] text-slate-500">Content, Social Media & Media Design</div>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
-                    Open
-                  </span>
-                </div>
-              </div>
-
-              {/* Informational Footer in Card */}
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  Verified against Internshala listings
-                </span>
-                <span className="font-medium text-purple-700">Remote & WFH</span>
-              </div>
-            </div>
+        {/* Curated Collection Shortcuts */}
+        <div className="pt-6 border-t border-[#1A2639]">
+          <div className="text-[11px] font-semibold text-[#718096] uppercase tracking-wider mb-3">
+            Curated Workflows
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {CURATED_COLLECTIONS.map((col) => {
+              const isSelected = activeCollection === col.id;
+              return (
+                <button
+                  key={col.id}
+                  onClick={() => onSelectCollection(isSelected ? 'all' : col.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer border ${
+                    isSelected
+                      ? 'bg-blue-950/80 text-blue-300 border-blue-500 shadow-xs shadow-blue-500/20'
+                      : 'bg-[#101827] text-[#A7B4C8] hover:text-[#F8FAFC] border-[#253247] hover:border-blue-500/40'
+                  }`}
+                >
+                  {col.title.replace('AI Tools for ', '').replace('Best AI Tools for ', '')}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

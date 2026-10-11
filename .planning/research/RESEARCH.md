@@ -1,38 +1,57 @@
-# Domain & Entity Research: InAmigos Foundation & Internshala Ecosystem
+# AI Toolbox — Domain Research & Verified Tool Registry
 
-## 1. Entity Profile: InAmigos Foundation
-- **Entity Legal Status**: Registered Section 8 Non-Profit Organization (NGO), incorporated in 2020.
-- **Location**: Ward No. 5, Gram Post, Sipat Ujwal Nagar, Bilaspur, Chhattisgarh, 495555, India.
-- **Accreditations**: 80G & 12A tax exemption, NGO DARPAN registration, ISO 9001:2015, CSR-1 approval.
-- **Official Website**: `https://inamigosfoundation.org.in/`
-- **Core Social Initiatives**:
-  - *Seva*: Food, clothing, and essential distribution drives.
-  - *Bachpanshala*: Educational support & tutoring for underprivileged children.
-  - *Jeev*: Animal rescue and feeding operations.
-  - *Udaan*: Women empowerment & vocational skill development.
-  - *Prakriti*: Environmental conservation & afforestation drives.
-  - *Vikas*: Youth skill building, technical training, and internship mentorship.
+## 1. Directory Entity Profile
+- **Entity**: AI Toolbox (Independent Discovery Directory)
+- **Role**: Curated index of leading generative AI and machine learning tools
+- **Navigation Safety Policy**: All outbound external links navigate directly to canonical vendor domains with HTTPS and `rel="noopener noreferrer"`.
 
-## 2. Internship Operations & Internshala Integration
-- **Host Platform**: InAmigos Foundation primarily publishes student internships and volunteer cohorts via **Internshala** (`https://internshala.com`).
-- **Standard Offering Attributes**:
-  - **Work Mode**: 100% Remote / Work From Home (Virtual), with occasional on-ground volunteer opportunities in Bilaspur/Chhattisgarh.
-  - **Typical Duration**: 2 Weeks to 4 Weeks (intensive short sprints).
-  - **Stipend Structure**: Typically unpaid (volunteer/educational training). Provides Certificate of Completion, Letter of Recommendation (LOR) for top performers, and flexible hours.
-  - **Key Domains Listed Regularly**:
-    1. AI & Machine Learning
-    2. AI Data Analytics
-    3. AI Web Development
-    4. AI Prompt Engineering & Generative AI
-    5. Content Writing & Communications
-    6. Social Work & NGO Project Volunteer (Bachpanshala / Seva / Udaan)
-    7. Digital Marketing & Community Outreach
-    8. Graphic Design & Creative Media
-- **Application Flow**:
-  - Discovery on portal -> Click Apply Now -> Internshala authentic listing page (`https://internshala.com/internship/detail/...` or organization listings hub) -> User submits via their verified Internshala account.
-  - If direct individual slug is expired or awaiting active cohort reopening, fallback is clearly annotated: direct Internshala search query / organization portal link, accompanied by explicit disclaimer that the user is leaving the site.
+## 2. Verified Tool Registry (30+ Real AI Tools)
 
-## 3. Transparency & Candidate Advisory
-- Independent portals must clearly declare that applications happen on Internshala.
-- Roles often blend learning with social action (community sharing or outreach).
-- Website must maintain rigorous objectivity: no fake reviews, no inflated stats, no misleading "paid" claims when listings are unpaid.
+| Tool Name | Canonical Official URL | Category | Pricing Tier | Verification Source |
+|---|---|---|---|---|
+| **ChatGPT** | `https://chatgpt.com` | AI Assistants | Freemium | OpenAI official product domain |
+| **Claude** | `https://claude.ai` | AI Assistants | Freemium | Anthropic official product domain |
+| **Google Gemini** | `https://gemini.google.com` | AI Assistants | Freemium | Google official product domain |
+| **Microsoft Copilot** | `https://copilot.microsoft.com` | AI Assistants | Freemium | Microsoft official product domain |
+| **Perplexity** | `https://www.perplexity.ai` | Research & Education | Freemium | Perplexity AI official domain |
+| **GitHub Copilot** | `https://github.com/features/copilot` | Coding & Development | Paid (Free for students/OSS) | GitHub official product page |
+| **Cursor** | `https://www.cursor.com` | Coding & Development | Freemium | Anysphere official Cursor domain |
+| **v0 by Vercel** | `https://v0.dev` | Coding & Development | Freemium | Vercel official v0 domain |
+| **Replit** | `https://replit.com` | Coding & Development | Freemium | Replit official domain |
+| **Lovable** | `https://lovable.dev` | Coding & Development | Freemium | Lovable official domain |
+| **Midjourney** | `https://www.midjourney.com` | Image Generation & Design | Paid | Midjourney official domain |
+| **Canva Magic Studio** | `https://www.canva.com` | Image Generation & Design | Freemium | Canva official domain |
+| **Adobe Firefly** | `https://www.adobe.com/products/firefly.html` | Image Generation & Design | Freemium | Adobe official product page |
+| **Ideogram** | `https://ideogram.ai` | Image Generation & Design | Freemium | Ideogram official domain |
+| **Leonardo AI** | `https://leonardo.ai` | Image Generation & Design | Freemium | Leonardo AI official domain |
+| **Runway** | `https://runwayml.com` | Video & Animation | Freemium | Runway official domain |
+| **Luma Dream Machine** | `https://lumalabs.ai/dream-machine` | Video & Animation | Freemium | Luma AI official product page |
+| **Pika** | `https://pika.art` | Video & Animation | Freemium | Pika Labs official domain |
+| **ElevenLabs** | `https://elevenlabs.io` | Audio & Music | Freemium | ElevenLabs official domain |
+| **Suno** | `https://suno.com` | Audio & Music | Freemium | Suno AI official domain |
+| **Udio** | `https://www.udio.com` | Audio & Music | Freemium | Udio official domain |
+| **Descript** | `https://www.descript.com` | Audio & Music | Freemium | Descript official domain |
+| **NotebookLM** | `https://notebooklm.google.com` | Research & Education | Free | Google official product domain |
+| **Elicit** | `https://elicit.com` | Research & Education | Freemium | Elicit official domain |
+| **Consensus** | `https://consensus.app` | Research & Education | Freemium | Consensus official domain |
+| **Grammarly** | `https://www.grammarly.com` | Writing & Content | Freemium | Grammarly official domain |
+| **DeepL** | `https://www.deepl.com` | Writing & Content | Freemium | DeepL official domain |
+| **Notion AI** | `https://www.notion.so/product/ai` | Productivity & Automation | Paid (Add-on) | Notion official product page |
+| **Gamma** | `https://gamma.app` | Productivity & Automation | Freemium | Gamma official domain |
+| **Zapier Central** | `https://zapier.com` | Productivity & Automation | Freemium | Zapier official domain |
+| **Make** | `https://www.make.com` | Productivity & Automation | Freemium | Celonis Make official domain |
+| **Julius AI** | `https://julius.ai` | Data Analysis | Freemium | Julius AI official domain |
+| **Hugging Face** | `https://huggingface.co` | Coding & Development | Freemium | Hugging Face official domain |
+| **Phind** | `https://www.phind.com` | Coding & Development | Freemium | Phind official search domain |
+
+## 3. Categories & Taxonomies
+1. **AI Assistants**: Multi-turn conversational LLMs, personal assistants, multimodal chat.
+2. **Coding & Development**: AI IDEs, code generation copilots, fullstack app builders.
+3. **Writing & Content**: Grammar polishers, translation, content structuring, copywriting.
+4. **Image Generation & Design**: Text-to-image synthesis, visual design canvases, typography art.
+5. **Video & Animation**: Generative video diffusion, text-to-video, visual effect studios.
+6. **Audio & Music**: High-fidelity voice synthesis, music generation, audio cleanup.
+7. **Research & Education**: Scientific literature discovery, grounding notebooks, citation search.
+8. **Productivity & Automation**: Presentation generation, workflow automations, meeting notes.
+9. **Business & Marketing**: Outreach orchestration, marketing copy, ad generation.
+10. **Data Analysis**: Natural language data science, code-free statistical modeling, chart synthesis.

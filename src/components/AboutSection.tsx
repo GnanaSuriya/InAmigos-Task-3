@@ -1,112 +1,91 @@
-import { ExternalLink, ShieldCheck, HeartHandshake, Compass, Users } from 'lucide-react';
+import { ShieldCheck, Compass, Zap, ExternalLink } from 'lucide-react';
 
 export const AboutSection = () => {
   return (
-    <section id="about-section" className="py-20 border-b border-slate-200/60 bg-[#FAFAF9]">
+    <section id="about-section" className="py-20 border-b border-[#253247] bg-[#070B12]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Heading and Core Transparency Copy */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="text-xs font-bold text-purple-700 tracking-wider uppercase">
-              About The Discovery Portal
+            <div className="text-xs font-bold text-[#60A5FA] tracking-wider uppercase">
+              About The Directory
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Focused on opportunities that matter.
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight leading-tight">
+              Curated clarity in the fast-moving AI landscape.
             </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
-              This portal organizes internship listings offered by <strong>InAmigos Foundation</strong> into a structured, easy-to-browse discovery interface and directs prospective applicants straight to the authentic application listings on Internshala.
+            <p className="text-sm sm:text-base text-[#A7B4C8] leading-relaxed">
+              AI Toolbox is a curated directory designed to help people discover useful AI tools across different workflows. We organize tools by category and use case so users can compare options and visit their official websites.
             </p>
 
-            {/* Mandatory Transparency Box */}
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 text-xs text-slate-600 leading-relaxed space-y-2 shadow-2xs">
-              <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                <ShieldCheck className="w-4 h-4 text-purple-600" />
-                <span>Independent Discovery Interface</span>
+            {/* Transparency Callout */}
+            <div className="p-5 rounded-2xl bg-[#0B1220] border border-[#253247] text-xs text-[#A7B4C8] leading-relaxed space-y-3">
+              <div className="flex items-center gap-2 font-bold text-[#F8FAFC] text-sm">
+                <ShieldCheck className="w-4 h-4 text-[#22D3EE]" />
+                <span>Independent Curation & Safe Linking</span>
               </div>
               <p>
-                This website is an independently built discovery interface created to help students easily navigate and review InAmigos Foundation internship listings. It is not an official application processor and does not collect candidate resumes or fees.
+                We do not claim official partnerships, sponsorships, or endorsements with tool providers. Every listing directs applicants to its canonical vendor domain without intermediary tracking or fake affiliate links.
               </p>
               <p>
-                All applications are completed exclusively on <strong>Internshala</strong>, where applicants should confirm real-time deadlines, responsibilities, and terms.
+                This is a discovery index, not an AI model itself. It exists to simplify evaluation and point you directly to the tools that match your specific creative or engineering workflows.
               </p>
-            </div>
-
-            <div className="pt-2 flex flex-wrap gap-4 text-xs font-semibold">
-              <a
-                href="https://inamigosfoundation.org.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-purple-700 hover:border-purple-200 shadow-2xs transition-colors"
-              >
-                <span>Visit Official InAmigos Website</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://internshala.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-purple-700 hover:border-purple-200 shadow-2xs transition-colors"
-              >
-                <span>Visit Internshala</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
             </div>
           </div>
 
-          {/* Right Column: Verified Foundation Pillars Card */}
-          <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-200/90 p-8 shadow-sm">
-            <h3 className="text-lg font-bold text-slate-900 mb-2">
-              About InAmigos Foundation
+          {/* Right Column: Key Principles Grid */}
+          <div className="lg:col-span-6 bg-[#0B1220] rounded-3xl border border-[#253247] p-8 shadow-xl shadow-black/30">
+            <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">
+              Our Core Principles
             </h3>
-            <p className="text-xs text-slate-600 leading-relaxed mb-6">
-              InAmigos Foundation is a registered Section 8 non-profit organization established in 2020 based in Bilaspur, Chhattisgarh, India. The foundation leads grassroots community programs across education, welfare, and sustainability:
+            <p className="text-xs text-[#718096] mb-6">
+              How we evaluate, index, and maintain the AI Toolbox directory.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <div className="p-4 rounded-xl bg-[#101827] border border-[#1A2639]">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <Compass className="w-4 h-4 text-purple-600" />
-                  <div className="text-xs font-bold text-slate-900">Project Bachpanshala</div>
+                  <ShieldCheck className="w-4 h-4 text-[#60A5FA]" />
+                  <div className="text-xs font-bold text-[#F8FAFC]">100% Official Links</div>
                 </div>
-                <div className="text-[11px] text-slate-500 leading-normal">
-                  Educational guidance and foundational tutoring support for children.
+                <div className="text-[11px] text-[#A7B4C8] leading-normal">
+                  Strictly verified canonical HTTPS vendor domains with zero search engine redirects.
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <div className="p-4 rounded-xl bg-[#101827] border border-[#1A2639]">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <HeartHandshake className="w-4 h-4 text-purple-600" />
-                  <div className="text-xs font-bold text-slate-900">Project Seva</div>
+                  <Compass className="w-4 h-4 text-[#22D3EE]" />
+                  <div className="text-xs font-bold text-[#F8FAFC]">Curated Relevance</div>
                 </div>
-                <div className="text-[11px] text-slate-500 leading-normal">
-                  Distribution of nutrition, clothing, and essential kits to vulnerable families.
+                <div className="text-[11px] text-[#A7B4C8] leading-normal">
+                  Carefully vetted benchmark tools across coding, design, audio, video, and research.
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <div className="p-4 rounded-xl bg-[#101827] border border-[#1A2639]">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <Users className="w-4 h-4 text-purple-600" />
-                  <div className="text-xs font-bold text-slate-900">Project Udaan</div>
+                  <Zap className="w-4 h-4 text-emerald-400" />
+                  <div className="text-xs font-bold text-[#F8FAFC]">Zero Clutter & Ads</div>
                 </div>
-                <div className="text-[11px] text-slate-500 leading-normal">
-                  Vocational training, empowerment drives, and self-reliance initiatives for women.
+                <div className="text-[11px] text-[#A7B4C8] leading-normal">
+                  No sponsored popup banners, intrusive tracking scripts, or fabricated reviews.
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <div className="p-4 rounded-xl bg-[#101827] border border-[#1A2639]">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <ShieldCheck className="w-4 h-4 text-purple-600" />
-                  <div className="text-xs font-bold text-slate-900">Project Vikas</div>
+                  <ExternalLink className="w-4 h-4 text-purple-400" />
+                  <div className="text-xs font-bold text-[#F8FAFC]">Local Privacy</div>
                 </div>
-                <div className="text-[11px] text-slate-500 leading-normal">
-                  Youth skill building, digital literacy, and student internship cohorts.
+                <div className="text-[11px] text-[#A7B4C8] leading-normal">
+                  Favorites are stored locally in your browser with zero mandatory accounts or tracking.
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
-              <span>Section 8 NGO Registration</span>
-              <span className="font-mono text-purple-700">Bilaspur, CG, India</span>
+            <div className="mt-6 pt-4 border-t border-[#1A2639] text-[11px] text-[#718096] flex items-center justify-between">
+              <span>Updated & Audited Daily</span>
+              <span className="font-mono text-blue-400">Open Directory</span>
             </div>
           </div>
         </div>

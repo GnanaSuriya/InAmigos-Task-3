@@ -1,47 +1,51 @@
-# GSD Project Roadmap: InAmigos Internships
+# AI Toolbox — Project Roadmap
 
-## Milestone v1.0 — Production-Quality Discovery Portal
+## Milestone v2.0 — Production-Ready AI Tools Directory
 
-### Phase 1: Environment & Project Foundation
-- **Goal**: Scaffold React + TypeScript + Vite + Tailwind CSS project with custom design system variables, fonts, and base styling.
-- **Deliverables**:
-  - `package.json`, `vite.config.ts`, `tsconfig.json`, `tailwind.config.js` or Tailwind v4 setup.
-  - Custom design tokens in `index.css` (warm off-white, deep navy, restrained violet, soft lavender).
-  - Clean project scaffolding in `src/`.
-- **Status**: Planned
+### Phase 1: Project Foundation & Premium Dark Design System
+- Establish CSS design tokens (`#070B12`, `#0B1220`, `#101827`, `#151F30`, `#3B82F6`, `#22D3EE`, `#F8FAFC`).
+- Configure typography, dark scrollbars, glow utilities, and card borders in `index.css`.
+- Update `index.html` with AI Toolbox title, meta description, and keywords.
 
-### Phase 2: Centralized Internship Data Engine & Models
-- **Goal**: Establish the strictly verified InAmigos Foundation internship schema and centralized data store with verified Internshala opportunities and safe link resolution.
-- **Deliverables**:
-  - `src/types/internship.ts` (strictly typed schema).
-  - `src/data/internships.ts` (authentic InAmigos Foundation listings across AI, Analytics, Web Dev, Content, Social Work, Marketing, Design).
-  - Verification audit metadata (`lastVerifiedAt`, verified source URLs, honest unpaid disclosure).
-  - Storage helper for bookmarks / local shortlist (`src/utils/storage.ts`).
-- **Status**: Planned
+### Phase 2: Custom Logo & Brand Assets
+- Create scalable SVG logo combining geometric toolbox with electric-blue & cyan 4-point AI sparkle.
+- Create icon-only SVG, horizontal logo lockup with "AI Toolbox", and `public/favicon.svg`.
+- Create `src/components/Logo.tsx` component.
 
-### Phase 3: Core Discovery & Listing Interface
-- **Goal**: Build the search, filter, sort, card grid, shortlist, share, and modal/drawer components.
-- **Deliverables**:
-  - `src/components/Navbar.tsx`: Sticky navigation with custom brand mark, links, and bookmark counter.
-  - `src/components/Hero.tsx`: Refined hero with specified copy, trust badge, and tasteful geometric/editorial visual.
-  - `src/components/SearchBar.tsx` & `FilterBar.tsx`: Instant multi-field search, category chips, mode/duration filters, sort options.
-  - `src/components/InternshipCard.tsx`: Consistent Linear-style card with badges, skills, bookmark, share, View Details, and Apply Now.
-  - `src/components/InternshipDetailModal.tsx`: Comprehensive drawer/modal with responsibilities, eligibility, logistics, and Internshala redirection warning.
-  - `src/components/Toast.tsx`: Smooth toast notifications for bookmarking and share link copies.
-- **Status**: Planned
+### Phase 3: Verified AI Tools Dataset & Link Validation
+- Define strong TypeScript interfaces in `src/types/tool.ts`.
+- Build curated dataset of 30+ real AI tools with verified canonical HTTPS URLs in `src/data/tools.ts`.
+- Create repeatable automated validation script `scripts/validate-tools.mjs` and npm script `npm run validate:tools`.
 
-### Phase 4: Editorial Content Sections & Disclaimers
-- **Goal**: Assemble the About section, How It Works guide, and verified Footer with mandatory transparency disclaimers.
-- **Deliverables**:
-  - `src/components/HowItWorks.tsx`: 3-step structured guidance (Discover, Review, Apply).
-  - `src/components/AboutSection.tsx`: Transparent foundation profile, independent discovery disclaimer, verified links.
-  - `src/components/Footer.tsx`: Brand wordmark, navigation links, verified external links, regulatory and application disclaimers.
-- **Status**: Planned
+### Phase 4: Main Discovery Experience & Navigation
+- Build `Navbar.tsx` with brand lockup, section jumps, search shortcut, and live favorites badge.
+- Build `Hero.tsx` with headline, search bar, collection shortcuts, and category quick-filters.
+- Build `FeaturedTools.tsx` section showcasing top curated tools.
 
-### Phase 5: Verification, Testing, Production Build & Documentation
-- **Goal**: Full verification of build, responsiveness, link integrity, bookmarking persistence, and clear documentation.
-- **Deliverables**:
-  - `npm run build` validation with zero errors.
-  - Browser verification of responsive behavior and interactive states.
-  - Complete `README.md` with overview, architecture, data verification guide, local setup, and deployment notes.
-- **Status**: Planned
+### Phase 5: Search, Categories, Filters & Sorting
+- Build `SearchBar.tsx` and `FilterBar.tsx` for multi-field search and category chips.
+- Add pricing filters, collection filters, and sorting (Featured, Alphabetical, Recent).
+- Implement `src/utils/filterTools.ts` for clean testable query execution.
+- Build `EmptyState.tsx` tailored for zero search results and empty favorites.
+
+### Phase 6: Tool Detail Modal & External Navigation
+- Build `ToolCard.tsx` with dark card styling, tags, pricing badges, and safe external navigation.
+- Build `ToolDetailModal.tsx` with deep-linking `?tool=<slug>`, verified features checklist, and direct official website CTA.
+
+### Phase 7: Favorites & Local Persistence
+- Build `src/hooks/useFavorites.ts` with browser `localStorage` integration and window storage event synchronization.
+- Enable favorites filtering and live counter across navbar and filter toolbar.
+
+### Phase 8: Editorial Content, Curated Collections & About Section
+- Build `CollectionsSection.tsx` highlighting curated student, developer, designer, and free collections.
+- Build `AboutSection.tsx` with independent directory transparency.
+- Build `Footer.tsx` with logo, category links, outbound disclaimer, and dynamic current year.
+
+### Phase 9: SEO, Performance & Production Verification
+- Run production build (`tsc -b && vite build`) and validation tests.
+- Verify browser experience with automated browser subagent (search, filters, favorites, modal, mobile responsiveness).
+
+### Phase 10: Vercel Deployment Readiness
+- Create `vercel.json` for client-side single page app routing rewrites.
+- Ensure zero hardcoded server dependencies or secrets.
+- Write comprehensive deployment instructions in `README.md`.

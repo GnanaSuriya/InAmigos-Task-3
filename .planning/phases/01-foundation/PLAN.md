@@ -1,11 +1,19 @@
-# Phase 1 Plan: Environment & Project Foundation
+# Phase 1 Plan: Project Foundation & Premium Dark Design System
 
 ## Objective
-Initialize the React 19 + TypeScript + Vite project with Tailwind CSS and the custom design tokens (warm off-white background, deep navy text, restrained violet accent, soft lavender surfaces).
+Establish the technical base and dark theme design system for **AI Toolbox** using Tailwind CSS v4, custom CSS variables, and dark surface tokens.
 
-## Tasks
-1. Initialize Vite project with React + TypeScript template.
-2. Install dependencies: `lucide-react`, `tailwindcss`, `@tailwindcss/vite` (or postcss/tailwind configuration).
-3. Configure `index.html` with title, meta tags, Google Fonts (Plus Jakarta Sans / Inter).
-4. Configure `index.css` with color variables, typography, and base utility tokens.
-5. Verify build compiles cleanly.
+## Scope & Tasks
+1. Update `index.html` with title "AI Toolbox — Discover the right AI for every task", meta description, and Google Fonts (Inter / Outfit).
+2. Configure theme design tokens in `src/index.css`:
+   - Main background: `#070B12`
+   - Secondary background: `#0B1220`
+   - Card background: `#101827`
+   - Elevated surface: `#151F30`
+   - Primary blue: `#3B82F6`
+   - Bright accent: `#60A5FA`
+   - Cyan accent: `#22D3EE`
+   - Text colors: `#F8FAFC`, `#A7B4C8`, `#718096`
+   - Borders: `#253247`
+3. Implement custom dark scrollbars, restrained blue glows, and micro-interaction transitions.
+4. Verify root styles render cleanly with dark theme defaults.

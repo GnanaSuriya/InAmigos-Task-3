@@ -1,24 +1,29 @@
-# InAmigos Internships — AI-Powered Internship Discovery Website
+# AI Toolbox — Curated AI Tools Directory
 
 ## Product Overview
-**InAmigos Internships** is a focused, refined, and production-quality internship discovery portal that displays solely and strictly internship opportunities offered by **InAmigos Foundation** (a registered Section 8 NGO based in Bilaspur, Chhattisgarh, India).
+**AI Toolbox** is a polished, fast, production-ready discovery directory designed to help developers, designers, students, creators, and professionals discover, compare, and navigate directly to authentic, verified AI tools across a wide variety of workflows.
 
-The website serves as an intuitive discovery, filtering, and review layer that redirects applicants to official listing application destinations (principally Internshala). It does not falsify applications, fabricate opportunities, or impersonate an official operational wing of the foundation.
-
-## Core Directives & Guardrails
-1. **Strict Organization Scope**: Only display internships verified for InAmigos Foundation. No unrelated company listings.
-2. **Honest Application Redirection**: Applications take place on the original Internshala listing. No fake internal submission forms.
-3. **Data Authenticity**: All listings, categories, stipends, and URLs must be grounded in verified reality. If a specific application link or attribute is unavailable, state clearly rather than inventing placeholder URLs.
-4. **Design Aesthetic**: Linear-style visual clarity, warm off-white background, deep navy typography, restrained violet accent, soft lavender highlights, subtle shadows, modern typography, zero generic clutter or aggressive AI tropes.
-5. **Full Functional Suite**: Search, category filters, duration/mode filters, sorting, local bookmarking (localStorage), Web Share API / clipboard fallback, detail drawer/page, accessible UI, and mobile navigation.
+**Tagline**: *"Discover the right AI for every task."*  
+**Description**: *"One curated directory to discover AI tools for coding, design, writing, research, productivity, video, audio, and more."*
 
 ## Target Audience
-Students, undergraduates, and early-career individuals in India seeking practical experience, volunteer internships, technical training, and social work exposure at InAmigos Foundation.
+- **Developers & Engineers**: Finding modern AI code editors, copilot extensions, full-stack builders, and model hubs.
+- **Designers & Creative Directors**: Discovering image generators, canvas augmentations, vector designers, and UI generators.
+- **Writers & Content Creators**: Finding grammar assistants, scriptwriters, video synthesizers, and voice generators.
+- **Students & Researchers**: Discovering academic paper synthesizers, citation assistants, and intelligent notebooks.
+- **Productivity Seekers & Knowledge Workers**: Discovering automated workflow connectors, spreadsheet assistants, and AI notes.
 
-## Technology Stack
-- **Framework**: React 19 + Vite
+## Core Directives & Principles
+1. **Curated & Authentic**: Every listed tool represents a genuine, notable AI software product with a verified official URL (no affiliate links, no search engine redirects, no spam directories).
+2. **Direct Navigation**: Clicking "Visit Tool" / "Visit Official Website" opens the tool's genuine official domain in a new tab (`target="_blank"`, `rel="noopener noreferrer"`).
+3. **No Fabricated Data**: Accurate pricing models (Free, Freemium, Paid, Commercial Free Trial) verified from vendor disclosures; unknown prices marked explicitly as "Pricing varies". Zero fake user counts, inflated ratings, or fake reviews.
+4. **Distinctive Dark UI Design**: Tailored SaaS dark theme (`#070B12`, `#0B1220`, `#101827`, `#151F30`, `#3B82F6`, `#22D3EE`, `#F8FAFC`). No generic templates or flashy gimmicks.
+5. **Fast Client-Side Experience**: Instant multi-field search, multi-category filtering, use-case filters, curation collections, custom sorting, deep-linkable tool detail modals (`?tool=<slug>`), and local browser favorites.
+
+## Technical Architecture
+- **Framework**: React 19 + Vite 8
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS + Custom CSS Variables (warm off-white `#FAFAF9`, navy `#0F172A`, violet `#6D28D9`, lavender `#F5F3FF`)
+- **Styling**: Tailwind CSS v4 + Custom Dark Theme CSS tokens
 - **Icons**: Lucide React
-- **Client Storage**: LocalStorage for saved/shortlisted internships
-- **Deployment**: Static build output (Vite `dist`) compatible with Vercel/Netlify/GitHub Pages
+- **Storage**: Browser LocalStorage for persistent user favorites
+- **Deployment**: Static build output (`dist/`) ready for Vercel SPA hosting (`vercel.json`)

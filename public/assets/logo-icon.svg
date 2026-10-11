@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0B1220"/>
+  <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="11.25" stroke="#253247" stroke-width="1.5"/>
+  <!-- Geometric Toolbox Structure -->
+  <path d="M10 18V33C10 34.66 11.34 36 13 36H35C36.66 36 38 34.66 38 33V18" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M18 18V13.5C18 12.67 18.67 12 19.5 12H28.5C29.33 12 30 12.67 30 13.5V18" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- 4-Point AI Sparkle Node -->
+  <path d="M24 19.5C24 22.5 21.8 24.5 19 24.5C21.8 24.5 24 26.5 24 29.5C24 26.5 26.2 24.5 29 24.5C26.2 24.5 24 22.5 24 19.5Z" fill="#22D3EE"/>
+  <circle cx="14" cy="20" r="1.5" fill="#60A5FA"/>
+  <circle cx="34" cy="20" r="1.5" fill="#60A5FA"/>
+</svg>

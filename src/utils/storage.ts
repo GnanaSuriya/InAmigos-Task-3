@@ -1,29 +1,29 @@
-const BOOKMARKS_STORAGE_KEY = 'inamigos_bookmarked_internships_v1';
+const FAVORITES_STORAGE_KEY = 'aitoolbox_favorite_tools_v1';
 
 /**
- * Retrieves list of saved internship IDs from LocalStorage
+ * Retrieves list of favorited tool IDs from LocalStorage
  */
-export function getSavedInternshipIds(): string[] {
+export function getFavoriteToolIds(): string[] {
   if (typeof window === 'undefined') return [];
   try {
-    const raw = localStorage.getItem(BOOKMARKS_STORAGE_KEY);
+    const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
   } catch (error) {
-    console.error('Failed to read bookmarks from localStorage:', error);
+    console.error('Failed to read favorites from localStorage:', error);
     return [];
   }
 }
 
 /**
- * Toggles an internship ID in LocalStorage bookmarks
- * @returns boolean true if newly bookmarked, false if removed
+ * Toggles a tool ID in LocalStorage favorites
+ * @returns boolean true if newly favorited, false if removed
  */
-export function toggleSavedInternshipId(id: string): boolean {
+export function toggleFavoriteToolId(id: string): boolean {
   if (typeof window === 'undefined') return false;
   try {
-    const current = getSavedInternshipIds();
+    const current = getFavoriteToolIds();
     const exists = current.includes(id);
     let updated: string[];
 
@@ -33,34 +33,33 @@ export function toggleSavedInternshipId(id: string): boolean {
       updated = [...current, id];
     }
 
-    localStorage.setItem(BOOKMARKS_STORAGE_KEY, JSON.stringify(updated));
-    // Dispatch custom event to notify listeners across components
-    window.dispatchEvent(new Event('inamigos_bookmarks_updated'));
+    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(updated));
+    window.dispatchEvent(new Event('aitoolbox_favorites_updated'));
     return !exists;
   } catch (error) {
-    console.error('Failed to toggle bookmark in localStorage:', error);
+    console.error('Failed to toggle favorite in localStorage:', error);
     return false;
   }
 }
 
 /**
- * Checks whether an internship is bookmarked
+ * Checks whether a tool is favorited
  */
-export function isInternshipSaved(id: string): boolean {
-  return getSavedInternshipIds().includes(id);
+export function isToolFavorited(id: string): boolean {
+  return getFavoriteToolIds().includes(id);
 }
 
 /**
  * Safe Share utility using Web Share API or Clipboard fallback
  */
-export async function shareInternship(
-  title: string, 
+export async function shareTool(
+  name: string, 
   id: string
 ): Promise<{ success: boolean; method: 'web-share' | 'clipboard' }> {
-  const shareUrl = `${window.location.origin}${window.location.pathname}?role=${encodeURIComponent(id)}`;
+  const shareUrl = `${window.location.origin}${window.location.pathname}?tool=${encodeURIComponent(id)}`;
   const shareData = {
-    title: `${title} | InAmigos Foundation Internship`,
-    text: `Check out the ${title} internship opportunity offered by InAmigos Foundation on Internshala:`,
+    title: `${name} | AI Toolbox`,
+    text: `Discover ${name} and other curated AI tools on AI Toolbox:`,
     url: shareUrl,
   };
 
@@ -72,7 +71,6 @@ export async function shareInternship(
       if ((err as Error)?.name === 'AbortError') {
         return { success: false, method: 'web-share' };
       }
-      // Fallback to clipboard if share failed
     }
   }
 

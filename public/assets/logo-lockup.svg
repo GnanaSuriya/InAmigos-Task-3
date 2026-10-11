@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Icon Block -->
+  <rect width="48" height="48" rx="12" fill="#0B1220"/>
+  <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="11.25" stroke="#253247" stroke-width="1.5"/>
+  <path d="M10 18V33C10 34.66 11.34 36 13 36H35C36.66 36 38 34.66 38 33V18" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M18 18V13.5C18 12.67 18.67 12 19.5 12H28.5C29.33 12 30 12.67 30 13.5V18" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M24 19.5C24 22.5 21.8 24.5 19 24.5C21.8 24.5 24 26.5 24 29.5C24 26.5 26.2 24.5 29 24.5C26.2 24.5 24 22.5 24 19.5Z" fill="#22D3EE"/>
+  <!-- Typography Block -->
+  <text x="62" y="27" fill="#F8FAFC" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5">AI <tspan fill="#3B82F6">Toolbox</tspan></text>
+  <text x="62" y="38" fill="#718096" font-family="'Inter', system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="1.2">CURATED DIRECTORY</text>
+</svg>
